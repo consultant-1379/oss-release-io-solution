@@ -1,0 +1,36 @@
+pipeline {
+  agent {
+    node {
+      label SLAVE
+    }
+  }
+  options {
+    timestamps()
+    timeout(time: 10, unit: 'MINUTES')
+  }
+
+  stages {
+    stage('Dashboard As Code') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: params.SELI_CRED, usernameVariable: 'SELI_CRED_USR', passwordVariable: 'SELI_CRED_PSW')]) {
+        sh "docker run --rm --name oris-${BUILD_TAG} armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/elk-setup:latest db-as-code-setup -seli_user ${SELI_CRED_USR} -seli_pass ${SELI_CRED_PSW} -user ${USERNAME} -pass ${PASSWORD} -custid ${CUSTOM_ID} -kib_space ${KIBANA_SPACE} -db_type ${DASHBOARD_TYPE} -v"
+        }
+      }
+    }
+  }
+ post {
+    success {
+      cleanWs()
+    }
+    failure {
+      mail to: 'PDLREGULUS@pdl.internal.ericsson.com',
+      subject: "FAILED: Build ${env.JOB_NAME}:Build No ${env.BUILD_NUMBER}",
+      body: "Build failed ${env.JOB_NAME} build no: ${env.BUILD_NUMBER}.\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}"
+    }
+    aborted{
+      mail to: 'PDLREGULUS@pdl.internal.ericsson.com',
+      subject: "ABORTED: Build ${env.JOB_NAME}:Build No ${env.BUILD_NUMBER}",
+      body: "Build Aborted ${env.JOB_NAME} build no: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}"
+    }
+  }
+}

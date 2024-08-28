@@ -1,0 +1,179 @@
+{
+  "ADC":
+  {
+      "teamsData":[
+          {
+          "teamName": "Augurey"
+          },
+          {
+          "teamName": "Pilgrim"
+          },
+          {
+          "teamName": "Quaranteam"
+          },
+          {
+            "teamName": "Aster"
+          }
+  ]
+  },
+  "App Manager":
+  {
+      "teamsData":[
+          {
+            "teamName": "RogerRoger"
+          },
+          {
+            "teamName": "Rhapsody"
+          },
+          {
+            "teamName": "Saga"
+          },
+          {
+            "teamName": "Indigo"
+          },
+          {
+              "teamName": "EST_Policy_ACM-R_Team"
+          },
+          {
+              "teamName": "TeamSunflowers"
+          }
+      ]
+  },
+  "Base Platform":
+  {
+      "teamsData":[
+          {
+            "teamName": "Stepmaster2000"
+          },
+          {
+            "teamName": "Arcturus"
+          },
+          {
+              "teamName": "Photon"
+          },
+          {
+            "teamName": "Riders"
+          },
+          {
+            "teamName": "Green Pass"
+          },
+          {
+              "teamName": "Saiyan"
+          },
+          {
+            "teamName": "Thunder Bolt"
+          },
+          {
+            "teamName": "Smart Insights"
+          },
+          {
+            "teamName": "Heimdall"
+          }
+      ]
+  },
+  "DMM":
+  {
+      "teamsData":[
+          {
+              "teamName": "Sunshine"
+          },
+          {
+              "teamName": "Tech Coders"
+          },
+          {
+              "teamName": "Celeritas"
+          },
+          {
+              "teamName": "Legion"
+          }
+      ]
+  },
+  "TIEH":
+  {
+      "teamsData":[
+          {
+              "teamName": "Volt"
+          },
+          {
+              "teamName": "Dynamo"
+          },
+          {
+              "teamName": "Lightning"
+          },
+          {
+              "teamName": "Balaton"
+          }
+      ]
+  },
+  "Topology Handling":
+  {
+      "teamsData":[
+          {
+              "teamName": "Dynamo"
+          }
+      ]
+  },
+  "EAS":
+  {
+      "teamsData":[
+          {
+              "teamName": "Bora"
+          },
+          {
+              "teamName": "Cerberus"
+          },
+          {
+              "teamName": "Icarus"
+          }
+      ]
+  },
+  "Oran Support":
+  {
+      "teamsData":[
+          {
+              "teamName": "Dynamo"
+          }
+      ]
+  },
+  "ML":
+  {
+      "teamsData":[
+          {
+              "teamName": "SMOke"
+          }
+      ]
+  },
+  "CS":
+  {
+      "teamsData":[
+          {
+              "teamName": "Athos"
+          }
+      ]
+  },
+  "CH":
+  {
+      "teamsData":[
+          {
+              "teamName": "Bora"
+          }
+      ]
+  },
+  "PMH":
+  {
+      "teamsData":[
+          {
+              "teamName": "Velociraptors"
+          },
+          {
+              "teamName": "Marvin"
+          },
+          {
+              "teamName": "Kodiak"
+          },
+          {
+              "teamName": "Count"
+          }
+      ]
+  }
+}

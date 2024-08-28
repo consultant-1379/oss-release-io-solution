@@ -1,0 +1,17 @@
+{
+    "stage":
+    {
+        "id": "",
+        "status": "",
+        "passed": false,
+        "finished": false,
+        "type": "",
+        "pipeline": null,
+        "name": "",
+        "jobUrl": "",
+        "jobFullDisplayName": "",
+        "startTime": "None",
+        "endTime": "None",
+        "duration": "None"
+    }
+}

@@ -1,0 +1,5 @@
+clusterName,namespaceName,url,metric,stkpiIndex
+CNIS_N205_VPOD2_A,oss-deploy-a,http://api.prod-staging-report.ews.gic.ericsson.se/api/v2/statistics/testware/main_eic_app_manager_v2/metrics/values?metric=ONBOARD_APP_DURATION&,ONBOARD_APP_DURATION,stability-stkpi-data
+CNIS_N205_VPOD2_B,oss-deploy-b,http://api.prod-staging-report.ews.gic.ericsson.se/api/v2/statistics/testware/main_eic_app_manager_v2/metrics/values?metric=ONBOARD_APP_DURATION&,ONBOARD_APP_DURATION,stability-stkpi-data
+CNIS_N205_VPOD2_A,oss-deploy-a,http://api.prod-staging-report.ews.gic.ericsson.se/api/v2/statistics/testware/main_eic_app_manager_load/metrics/values?metric=App_Onboarding_Duration&,App_Onboarding_Duration,stability-stkpi-data
+CNIS_N205_VPOD2_B,oss-deploy-b,http://api.prod-staging-report.ews.gic.ericsson.se/api/v2/statistics/testware/main_eic_app_manager_load/metrics/values?metric=App_Onboarding_Duration&,App_Onboarding_Duration,stability-stkpi-data

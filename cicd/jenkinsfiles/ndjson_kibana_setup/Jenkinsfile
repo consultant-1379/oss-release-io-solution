@@ -1,0 +1,29 @@
+pipeline {
+  agent {
+      node {
+          label SLAVE
+      }
+  }
+  options {
+      timestamps()
+      timeout(time: 30, unit: 'MINUTES')
+      buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '50'))
+  }
+  stages {
+      stage('Clean') {
+        steps {
+                sh 'rm -rf $WORKSPACE/oss-release-io-solution-resources'
+        }
+      }
+      stage('Fetch recent ndjson files from oss-release-io-solution-resources repo') {
+          steps {
+            script{
+              withCredentials([usernamePassword(credentialsId: env.FUNCTIONAL_USER_SECRET, usernameVariable: 'FUNCTIONAL_USER_USERNAME', passwordVariable: 'FUNCTIONAL_USER_PASSWORD')]) {
+              def impScriptPath = "oris/elk/src/operators/importing_ndjson_to_kibana.py"
+              sh "python ${impScriptPath}"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "stage":
+    {
+        "id": "",
+        "status": "",
+        "passed": false,
+        "finished": false,
+        "type": "",
+        "name": "",
+        "jobUrl": "",
+        "chartVersion": "",
+        "jobFullDisplayName": "",
+        "deploymentName": "",
+        "jobName": "",
+        "jobBuild": "",
+        "startTime": "date",
+        "endTime": "date",
+        "duration": "None"
+    }
+}

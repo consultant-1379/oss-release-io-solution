@@ -1,0 +1,7 @@
+TAG,tagValue,parentIndex,upgradeStage,installStage,k6Stage,upgradeYamlFile,artifactFile,upgradeLogFile,dataUploadIndex,stabilityTestContinuosStage,stabilityADCTestContinuosStage
+RCF_TAG,Release_Staging_Child_Flow,child-release-staging-data,Upgrade,"Install",Run k6 Tests & Assert,deploy-timing.yaml,artifact.properties,"",release-upgrade-install-data,"",""
+RCR_TAG,Product_Staging,product-staging-data,Upgrade using Helmfile,"",Run k6 Tests & Assert,deploy-timing.yaml,artifact.properties,upgrade.log,pso-upgrade-data,"",""
+RCR_TAG,PE_Delivery_Staging,pe-stability-staging-data,"","","",deploy-timing.yaml,artifact.properties,"",pe-stability-data,Run Tests Continuously,Run ADC Test Continuously
+RSR_TAG,Release_Staging,release-staging-data,"",Install,"",deploy-timing.yaml,artifact.properties,"",release-upgrade-install-data,"",""
+RCR_TAG,App_Staging_Child_Flow,child-app-staging-data,Upgrade using Helmfile,"","",deploy-timing.yaml,artifact.properties,upgrade.log,app-upgrade-install-data,"",""
+RCR_TAG,App_Staging,cicd-report-center,Upgrade using Helmfile,"","",deploy-timing.yaml,artifact.properties,upgrade.log,app-upgrade-install-data,"",""

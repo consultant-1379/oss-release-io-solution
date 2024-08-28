@@ -1,0 +1,25 @@
+
+{
+    "pipeline":
+    {
+        "chartName":
+        {
+            "spinnakerParameter" : "CHART_NAME",
+            "path": "trigger.parameters"
+        },
+        "chartVersion":
+        {
+            "spinnakerParameter" : "CHART_VERSION",
+            "path": "trigger.parameters"
+        }
+    },
+    "stage":
+    {
+        "jobFullDisplayName":
+        {
+            "spinnakerParameter" : "fullDisplayName",
+            "path": "context.buildInfo"
+        }
+    }
+}
+

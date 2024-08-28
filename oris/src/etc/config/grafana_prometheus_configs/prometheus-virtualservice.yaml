@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+    name: prometheus-vs
+spec:
+  hosts:
+  - "prometheus.hall912-sm.ews.gic.ericsson.se"
+  gateways:
+  - prometheus-gw
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 9090
+        host: eric-pm-server
+

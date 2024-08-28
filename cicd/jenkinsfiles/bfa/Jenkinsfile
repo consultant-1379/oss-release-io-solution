@@ -1,0 +1,41 @@
+pipeline {
+  agent {
+    node {
+      label SLAVE
+    }
+  }
+  options {
+    timestamps()
+    timeout(time: 15, unit: 'MINUTES')
+  }
+  stages {
+    stage('BFA Scan') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: params.SELI_CRED, usernameVariable: 'SELI_CRED_USR', passwordVariable: 'SELI_CRED_PSW')]) {
+        sh "docker run --rm --name oris-${BUILD_TAG} armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/elk-setup:latest bfa-setup -user ${SELI_CRED_USR} -pass ${SELI_CRED_PSW} -user ${USERNAME} -pass ${PASSWORD} -v"
+      }
+    }
+  }
+  }
+  post {
+    success {
+      cleanWs()
+    }
+    failure {
+      script {
+        def consoleLog = sh(script: "curl -u \"${USERNAME}:${PASSWORD}\" -k -s https://fem4s11-eiffel216.eiffel.gic.ericsson.se:8443/jenkins/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/consoleText", returnStdout: true).trim()
+        mail to: 'PDLREGULUS@pdl.internal.ericsson.com',
+        subject: "FAILED: Build ${env.JOB_NAME}:Build No ${env.BUILD_NUMBER}",
+        body: consoleLog
+        }
+    }
+    aborted{
+      script {
+        def consoleLog = sh(script: "curl -u \"${USERNAME}:${PASSWORD}\" -k -s https://fem4s11-eiffel216.eiffel.gic.ericsson.se:8443/jenkins/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/consoleText", returnStdout: true).trim()
+        mail to: 'PDLREGULUS@pdl.internal.ericsson.com',
+        subject: "ABORTED: Build ${env.JOB_NAME}:Build No ${env.BUILD_NUMBER}",
+        body: consoleLog
+        }
+    }
+  }
+}

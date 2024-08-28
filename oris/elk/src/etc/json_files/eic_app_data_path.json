@@ -1,0 +1,49 @@
+
+{
+    "pipeline":
+    {
+        "chartName": 
+        {
+            "spinnakerParameter" : "CHART_NAME",
+            "path": "trigger.parameters"
+        },
+        "intChartName":
+        {
+            "spinnakerParameter" : "INT_CHART_NAME",
+            "path": "trigger.parameters"
+        },
+        "appChartName":
+        {
+            "spinnakerParameter" : "APP_CHART_NAME",
+            "path": "trigger.parameters"
+        },
+        "chartVersion": 
+        {
+            "spinnakerParameter" : "CHART_VERSION",
+            "path": "trigger.parameters"
+        },
+        "skipChartRelease": 
+        {
+            "spinnakerParameter" : "SKIP_CHART_RELEASE",
+            "path": "trigger.parameters"
+        }
+    },
+    "stage":
+    {
+        "chartVersion": 
+        {
+            "spinnakerParameter" : "INT_CHART_VERSION",
+            "path": "context"
+        },
+        "jobFullDisplayName": 
+        {
+            "spinnakerParameter" : "fullDisplayName",
+            "path": "context.buildInfo"
+        },
+        "deploymentName": 
+        {
+            "spinnakerParameter" : "RESOURCE_NAME",
+            "path": "outputs"
+        }
+    }
+}

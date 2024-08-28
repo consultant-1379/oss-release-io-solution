@@ -1,0 +1,28 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EWXhNREV4TWpjMU0xb1hEVE14TURZd09ERXhNamMxTTFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT2szCnJZQXpNWjhJWWFHN2VzR0lzT3E4MnoyYjNFUW1peXdjT2c1UWhLL2pjL3hMN2tvSjlvZFhscXN3cStUQ3M1MTUKcmg4WkU5V2NISWJjTlhYTjhIdlYzRDdHSTh4UXNkMzY3WklVaFhBL0V0UTFDZk9VUk1JRUZSMGZGc3EybkpZWgpuclQ2ZzVZOVBnN2JPVkUzYUhVdGgyc1BZODI3aVROUmc4eDVWcHZZbEdGNzROUUFNb05hcmJLUkJja242eUdyClNtMURBZ3BoQWN4cUkyK0E2UDR6WU1JRnN3OG9iVW0wNk9QWlIvMVFVb0lFcjRjVGxycGtTV1RSSjFCYnNQbCsKYkx1TEUyNHNSeFBZWDZtT1gxaW9UYmdGK3N4WXVmWWczc1hIb3g0bThBemJOSTNoYTlCNW5WV3hUV1E1OTRzKwpsZ2Nma21YclE1ajErZHNhdDhNQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZKb0FUbzZRZFBJcThrWVM4V2xXb0tGb1hEditNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBT2JNQlFLOHBZUTkyVG01MHhPYW5jcWN3bVVjb3RnUnFKUWNJamFSUzVkemZmc1lFUApLc0RISC9FT3VwZFdUSTJlSC91M2VDS2FDWGV3c3Q4ckJlL0dWQmVxY3lzYmpqQ3g0a29qWldtOVpZMGQrdmJGCms2dGdEMEdTL2xYbGI3cmVnbk1xVjU1Ykx5V1Z6UXRDM2QzUEpSdnlTRVdLY0JMcE1xd0pHUytLS0lFS3VwSXMKaGplNm5XdnMzLzF3R1l1d0hGRDRrMEt0T3Zwb3ZXWWh3b3RuOW5GSnNCKzJlT3ZFOEM0TzBpREpnbzJXOVZsSQpnL0ZSSjlwM0p2MkIzTUtOU1JYb0FRV0dmR1BZUVFrOG1oYmxlakJ4R0F1MnExZ2h0NVVWK2lHQ2JtK3VSVlQrCmswU3ROalo1bUhCVzdjTjh0ek45czdsclNickNnVDhteTRUeQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://18531F73B007715AA8BD0365CE920A47.gr7.eu-west-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+    user: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+  name: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+current-context: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-1:212442621681:cluster/idunaasdev01-EKS-Cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-west-1
+      - eks
+      - get-token
+      - --cluster-name
+      - idunaasdev01-EKS-Cluster
+      command: /usr/local/bin/aws
+

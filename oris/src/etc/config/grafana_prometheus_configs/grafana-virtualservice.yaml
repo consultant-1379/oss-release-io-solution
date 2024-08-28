@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+    name: grafana-vs
+spec:
+  gateways:
+  - grafana-gw
+  hosts:
+  - grafana.hall912-sm.ews.gic.ericsson.se
+  http:
+  - name: grafana
+    route:
+    - destination:
+        host: grafana.grafana.svc.cluster.local
+        port:
+          number: 80

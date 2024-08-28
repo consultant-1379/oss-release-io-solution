@@ -1,0 +1,6 @@
+# config for IDUNaaS ossautoapp01 deployment
+[default]
+region=eu-west-1
+role_arn=arn:aws:iam::662502336946:role/apiuser
+sts_regional_endpoints=regional
+output=json

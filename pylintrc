@@ -1,0 +1,20 @@
+[MASTER]
+fail-under=9.5
+persistent=no
+
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length = 120
+
+
+# Enforce the LF line ending format
+expected-line-ending-format = LF
+
+[MESSAGES CONTROL]
+# Disable below warnings
+# W1201, W1203: Use lazy % formatting in logging functions
+# W0703: Catching too general exception Exception
+# R0903: Too few public methods
+
+disable = W1203,W1201,W0703,R0903,C0207,C0103,C0116,W0622,R0201,E0402,C0115,R1705,C0325,R0914,R0915,W0702,W0611,C0411,E0401,W1401,W1514,R1732,R0801,R0912,R0913,R0904
+

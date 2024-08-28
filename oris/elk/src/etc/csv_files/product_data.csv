@@ -1,0 +1,19 @@
+ProductName,AppAreaName,AppAreaAlias,AppName,AppNameAlias,chartName
+EIC,Data Management and Ingest,DMI,Analytics Data Collection,ADC,eric-oss-adc
+EIC,Data Management and Ingest,DMI,Data Management and Movement,DMM,eric-oss-dmm
+EIC,Automation Enablement,AE,App Management,APP MGR,eric-oss-app-mgr
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-oss-common-base
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-cncs-oss-config
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-cnbase-oss-config
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-cloud-native-service-mesh
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-cloud-native-base
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-service-exposure-framework
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,BASE PLATFORM,eric-storage-encryption-provider
+EIC,Topology Inventory and Configuration,TIC,Configuration Handling,CH,eric-oss-config-handling
+EIC,Topology Inventory and Configuration,TIC,Connected Systems Registry,CS,eric-oss-connected-systems-registry
+EIC,Topology Inventory and Configuration,TIC,Ericsson Adaptation Support,EAS,eric-oss-ericsson-adaptation
+EIC,Topology Inventory and Configuration,TIC,Oran Support,OS,eric-oss-oran-support
+EIC,Topology Inventory and Configuration,TIC,Topology and Inventory Exposure Handling,TIEH,eric-topology-exposure-handling
+EIC,Topology Inventory and Configuration,TIC,Topology Handling,TH,eric-topology-handling
+EIC,ML,ML,ML,ML,eric-oss-ml-execution-env
+EIC,Assurance Insights and Reporting,AIR,PM Stats Calculation Handling,PMH,eric-oss-pm-stats-calc-handling

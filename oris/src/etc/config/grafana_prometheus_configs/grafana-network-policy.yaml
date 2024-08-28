@@ -1,0 +1,11 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: grafana-external-trafic
+spec:
+  podSelector:
+    matchLabels:
+      app: eric-pm-server
+  ingress:
+  # ALLOW traffic from external clients
+  - from: []

@@ -1,0 +1,20 @@
+{
+    "comment" : "By default spinnaker ID, Pipeline Name, Spinnaker Application, URL, RCR_TAG, Status will be registere",
+    "pipeline": 
+    {
+        "finished": false,
+        "appName": "",
+        "retrigger": false,
+        "chartName": "",
+        "intChartName": "",
+        "appChartName": "",
+        "skipChartRelease": "",
+        "chartRelease": "",
+        "chartVersion": "",
+        "startTime": "date",
+        "endTime": "date",
+        "week": "None",
+        "duration": "None",
+        "passed": false
+    }
+}

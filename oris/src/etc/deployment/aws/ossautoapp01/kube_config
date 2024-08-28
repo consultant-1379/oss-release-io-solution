@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EY3hOVEV4TURNME1Gb1hEVE14TURjeE16RXhNRE0wTUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTVZnCk5yR0crWGdENExWckR6NzJ0cGxENnJMUEduckROMi8rVE1xL01pNmdaZkdmd0NoV0JEOEhCS0Y4UitmR3VueFMKZEpHVlNtais0akNVMGtESkxYV0lMblh3YXI3WWd3RUtEdGwrQTJ5WEFtY28zZ0pIdEtIM2RUaXhXeEc1MXl4WQo4WjMzcnVKZW56bjZXSEsvSU0xWElMbENxRTBZV2JURVFSY3lGaTVKK1g5cTQ5cXZNck1sMVNvUmUyeWtqVzI5CksvY05rRVJxem1keFNzWHdNVU81RldzK3hlbkVJUG0wTGdwNXkvK0JWbjNoYWJTNVQ4QitvT292eHIrRVRNUVIKdEp1TllwQ1R4bm9pK0dTUWRGWXdTcTRUV3lxN3p5YWdleGNIQnl3RklEMTFQM3p5Y3B4T3AxbTNFZmdRZ2pmbQp4cHRnbDdLVGRSTnp4TnpaYS9jQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZHQk1vQ1B3cmF1UlVKM24xbEFIL2pUTzRZSzFNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDRlpVSjR5R2tHcXJ2bmlnankwRDZLdkZlZVA2VWt3bVV0U3llcjl0V0Z4SG1hbmk3QQpmaHVwcEUxZXYrK3RpRXRScGg3UFhFK2hrSTNlSUhQN2NsamI2RGhvRnY0OVp2akFpbG9wakxYNkVuc1FwRjd3CmtTVnNBZURNZmRJTjJjQ0VmaVNhbGVkU2Myd2FKWDhsaFVZVlJvb3dqOXAxcjFXZ2FGaUhaUklSRmVvWm5LcHIKWGtoY25FWE9OQ2VKU0dtZFB0TlhTeEtRWUFMQU81TTBhZDdhNHFtdmhXMFB3WWhHNVhYbmhHRzBoeFF6eGdCYwpwS1NQU2VwQ2tKR1F3TlNCZUJXUWtoamRYSThtNTR3alBpaXNPM0FjSVlSdWdVWUd1YWlUYWZVaWgveVNDdWJYCmdpaG04QWZOYU5jMUlJYk1iemprRjNUM0xNQ1BHZnYvQTB4cwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://CC91754B7C91A132EF20F25CC1BCBEE9.gr7.eu-west-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+    user: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+  name: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+current-context: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-1:662502336946:cluster/ossautoapp01-EKS-Cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-west-1
+      - eks
+      - get-token
+      - --cluster-name
+      - ossautoapp01-EKS-Cluster
+      command: /usr/local/bin/aws

@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+spec:
+  rules:
+  - host: 'prometheus.huracan-az.athtem.eei.ericsson.se'
+    http:
+      paths:
+      - backend:
+          service:
+            name: eric-pm-server
+            port:
+              number: 9090
+        path: /
+        pathType: ImplementationSpecific

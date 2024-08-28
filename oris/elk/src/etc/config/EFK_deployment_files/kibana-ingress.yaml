@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana-ingress-eck
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/limit-req-zone: "limit_req_kibana_website"
+    nginx.ingress.kubernetes.io/limit-req-burst: "200"
+    nginx.ingress.kubernetes.io/limit-req-nodelay: "true"
+spec:
+  rules:
+  - host: 'kibana.hahn130.rnd.gic.ericsson.se'
+    http:
+      paths:
+      - backend:
+          service:
+            name: kibana-kb-http
+            port:
+              number: 5601
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - kibana.hahn130.rnd.gic.ericsson.se
+    secretName: elk

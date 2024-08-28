@@ -1,0 +1,108 @@
+#!/usr/bin/env groovy
+
+def bob = "bob/bob -r \${WORKSPACE}/cicd/rulesets/release.yaml"
+
+pipeline {
+    agent {
+        node {
+            label SLAVE
+       }
+    }
+
+    stages {
+        stage('Cleaning Git Repo') {
+            steps {
+                sh 'git clean -xdff'
+                sh 'git submodule sync'
+                sh 'git submodule update --init --recursive'
+            }
+        }
+        stage('Bump OSS release IO solution Version') {
+            steps {
+                sh "${bob} set-oris-env-variables bump-service-version"
+                script {
+                    env.IMAGE_VERSION = readFile('artifact.properties').trim()
+                }
+            }
+        }
+        stage('Build OSS release IO solution') {
+            steps {
+                sh "${bob} set-oris-env-variables build-docker-image"
+            }
+        }
+        stage('Publish OSS release IO solution') {
+            steps {
+                sh "${bob} set-oris-env-variables publish-docker-image"
+            }
+        }
+        stage('Add changes to Version file of OSS release IO solution') {
+            steps {
+                sh "${bob} set-oris-env-variables add-changes-to-version-file"
+            }
+        }
+        stage('Bump Elk Setup') {
+            steps {
+                sh "${bob} set-elk-env-variables bump-service-version"
+                script {
+                    env.IMAGE_VERSION = readFile('artifact.properties').trim()
+                }
+            }
+        }
+        stage('Build Elk Setup') {
+            steps {
+                sh "${bob} set-elk-env-variables build-docker-image"
+            }
+        }
+        stage('Publish Elk Setup') {
+            steps {
+                sh "${bob} set-elk-env-variables publish-docker-image"
+            }
+        }
+        stage('Add changes to Version file of Elk Setup') {
+            steps {
+                sh "${bob} set-elk-env-variables add-changes-to-version-file"
+            }
+        }
+        stage('Bump Python Precode Review Image Version') {
+            steps {
+                sh "${bob} set-python-precode-env-variables bump-service-version"
+                script {
+                    env.IMAGE_VERSION = readFile('artifact.properties').trim()
+                }
+            }
+        }
+        stage('Build Python Precode Review Image') {
+            steps {
+                sh "${bob} set-python-precode-env-variables build-docker-image"
+            }
+        }
+        stage('Publish Python Precode Review Image') {
+            steps {
+                sh "${bob} set-python-precode-env-variables publish-docker-image"
+            }
+        }
+        stage('Add changes to Version file of Python Precode Review Image') {
+            steps {
+                sh "${bob} set-python-precode-env-variables add-changes-to-version-file"
+            }
+        }
+        stage('Push up changes to version files') {
+            steps {
+                sh "${bob} push-changes-to-version-files"
+            }
+        }
+        stage('Archive artifact properties file') {
+            steps {
+                archiveArtifacts artifacts: 'artifact.properties', onlyIfSuccessful: true
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                sh "docker system prune -a -f"
+            }
+        }
+    }
+}

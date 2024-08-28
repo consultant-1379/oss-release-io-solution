@@ -1,0 +1,290 @@
+{
+    "eic-mttr-app-staging":
+    {
+        "pipeline":
+            {
+                "id": "text",
+                "applicationName": "text",
+                "name": "text",
+                "chartName": "text",
+                "chartRelease": "text",
+                "conclusion": "boolean",
+                "serviceName": "text",
+                "timeToRestore": "long",
+                "endTime": "date",
+                "startTime": "date"
+            },
+        "failureData":
+            {
+            "pipelineStatus": "text",
+            "endTime": "long",
+            "buildNumber": "long",
+            "ID": "text",
+            "chartVersion": "text",
+            "url": "text"
+            },
+        "successData":
+            {
+            "pipelineStatus": "text",
+            "endTime": "long",
+            "buildNumber": "long",
+            "ID": "text",
+            "chartVersion": "text",
+            "url": "text"
+            }
+    },
+    "autoapp-staging-data-parameterised":
+    {
+        "pipeline":
+        {
+            "id":"text",
+            "name":"text",
+            "application":"text",
+            "url":"text",
+            "rcrTag":"text",
+            "status":"text",
+            "finished": "boolean",
+            "retrigger": "boolean",
+            "chartName": "text",
+            "chartVersion": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "week": "text",
+            "duration": "long",
+            "passed": "boolean"
+        },
+        "stage":
+        {
+            "id": "text",
+            "status": "text",
+            "passed": "boolean",
+            "finished": "boolean",
+            "type": "text",
+            "pipeline": "text",
+            "name": "text",
+            "jobUrl": "text",
+            "jobFullDisplayName": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "duration": "long"
+        }
+    },
+    "autoapps-bur-data":
+    {
+        "pipeline":
+        {
+            "id":"text",
+            "name":"text",
+            "application":"text",
+            "url":"text",
+            "rcrTag":"text",
+            "status":"text",
+            "finished": "boolean",
+            "retrigger": "boolean",
+            "chartName": "text",
+            "chartVersion": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "week": "text",
+            "duration": "long",
+            "passed": "boolean"
+        },
+        "stage":
+        {
+            "id": "text",
+            "status": "text",
+            "passed": "boolean",
+            "finished": "boolean",
+            "type": "text",
+            "pipeline": "text",
+            "name": "text",
+            "jobUrl": "text",
+            "jobFullDisplayName": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "duration": "long"
+        }
+    },
+    "eic-mttr-product-staging":
+    {
+        "pipeline":
+            {
+                "id": "text",
+                "applicationName": "text",
+                "name": "text",
+                "chartName": "text",
+                "conclusion": "boolean",
+                "serviceName": "text",
+                "timeToRestore": "long",
+                "endTime": "date",
+                "startTime": "date"
+            },
+        "failureData":
+            {
+            "pipelineStatus": "text",
+            "endTime": "long",
+            "buildNumber": "long",
+            "ID": "text",
+            "chartVersion": "text",
+            "url": "text"
+            },
+        "successData":
+            {
+            "pipelineStatus": "text",
+            "endTime": "long",
+            "buildNumber": "long",
+            "ID": "text",
+            "chartVersion": "text",
+            "url": "text"
+            }
+    },
+    "child-app-staging-data":
+    {
+        "pipeline":
+        {
+            "id":"text",
+            "name":"text",
+            "application":"text",
+            "url":"text",
+            "rcrTag":"text",
+            "status":"text",
+            "finished": "boolean",
+            "retrigger": "boolean",
+            "chartName": "text",
+            "chartVersion": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "week": "text",
+            "duration": "long",
+            "passed": "boolean",
+            "iiHelmfileVersion": "text",
+            "helmfileTestVersion": "text",
+            "upgradeTesting": "boolean",
+            "installTesting": "boolean"
+        },
+        "stage":
+        {
+            "id": "text",
+            "status": "text",
+            "passed": "boolean",
+            "finished": "boolean",
+            "type": "text",
+            "pipeline": "text",
+            "name": "text",
+            "jobUrl": "text",
+            "jobFullDisplayName": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "duration": "long"
+        }
+    },
+    "app-upgrade-install-data":
+        {
+        "pipeline":
+        {
+          "id": "text",
+          "status": "text",
+          "finished": "boolean",
+          "application": "text",
+          "name": "text",
+          "buildNumber": "long",
+          "url": "text",
+          "retrigger": "boolean",
+          "chartName": "text",
+          "chartVersion": "text",
+          "startTime": "date",
+          "endTime": "date",
+          "duration": "long",
+          "passed": "boolean",
+          "service": "text",
+          "totalUpgradeDuration": "long",
+          "deploymentName": "text",
+          "deploymentManagerVersion": "text",
+          "parentPipelineId": "text"
+        },
+        "stage":
+        {
+          "id": "text",
+          "status": "text",
+          "passed": "boolean",
+          "finished": "boolean",
+          "type": "text",
+          "pipeline": "text",
+          "name": "text",
+          "jobUrl": "text",
+          "chartVersion": "text",
+          "jobFullDisplayName": "text",
+          "deploymentName": "text",
+          "startTime": "date",
+          "endTime": "date",
+          "duration": "long",
+          "appName": "text",
+          "appRevision": "text",
+          "appUpgradedFrom": "text",
+          "appUpgradedTo": "text",
+          "appDuration": "long"
+        }
+      },
+    "stability-stkpi-data":
+    {
+        "id": "text",
+        "average": "long",
+        "minimum": "long",
+        "maximum": "long",
+        "median": "long",
+        "date": "date",
+        "cluster": "text",
+        "namespace": "text"
+    },
+    "product-staging-failure-data":
+    {
+        "pipeline":
+        {
+            "id": "text",
+            "status": "text",
+            "finished": "boolean",
+            "application": "text",
+            "name": "text",
+            "buildNumber": "long",
+            "url": "text",
+            "retrigger": "boolean",
+            "chartName": "text",
+            "chartVersion": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "duration": "long",
+            "passed": "boolean",
+            "service": "text",
+            "totalUpgradeDuration": "long",
+            "deploymentName": "text",
+            "deploymentManagerVersion": "text",
+            "parentPipelineId": "text"
+          },
+          "stage":
+          {
+            "id": "text",
+            "status": "text",
+            "passed": "boolean",
+            "finished": "boolean",
+            "type": "text",
+            "pipeline": "text",
+            "name": "text",
+            "jobUrl": "text",
+            "chartVersion": "text",
+            "jobFullDisplayName": "text",
+            "deploymentName": "text",
+            "startTime": "date",
+            "endTime": "date",
+            "duration": "long",
+            "appName": "text",
+            "appRevision": "text",
+            "appUpgradedFrom": "text",
+            "appUpgradedTo": "text",
+            "appDuration": "long"
+          },
+        "jiraId": "text",
+        "jiraIssueCategory": "text",
+        "jiraStatus": "text"
+    }
+}
+

@@ -1,0 +1,26 @@
+ProductName,AppAreaName,AppAreaAlias,AppName,AppNameAlias,subApplications,chartName,SpinnakerAppName
+EIC,Topology Inventory and Configuration,TIC,Topology Handling,TH,"","",topology-handling-e2e-cicd
+EIC,Topology Inventory and Configuration,TIC,Ericsson Adaptation Support,EAS,"","",eas-e2e-cicd
+EIC,Topology Inventory and Configuration,TIC,Configuration Handling,CH,"","",config-handling-e2e-cicd
+EIC,Topology Inventory and Configuration,TIC,Oran Support,OS,"","",os-e2e-cicd
+EIC,Topology Inventory and Configuration,TIC,Topology and Inventory Exposure Handling,TIEH,"","",tieh-e2e-cicd
+EIC,Topology Inventory and Configuration,TIC,Connected Systems Registry,CS,"","",cs-e2e-cicd
+EIC,Data Management and Ingest,DMI,Data Management and Movement,DMM,"","",dmm-e2e-cicd
+EIC,Data Management and Ingest,DMI,Analytics Data Collection,ADC,"","",adc-e2e-cicd
+EIC,Automation Enablement,AE,App Management,APP MGR,"","",app-mgr-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,Common Base,Common Base,"eric-oss-common-base",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,CNCS OSS Config,CNCS OSS Config,"eric-cncs-oss-config",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,CN Base OSS Config,CN Base OSS Config,"eric-cnbase-oss-config",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,Cloud Native Service Mesh,Cloud Native Service Mesh,"eric-cloud-native-service-mesh",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,Cloud Native Base,Cloud Native Base,"eric-cloud-native-base",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,SEF,SEF,"eric-service-exposure-framework",base-platform-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Base Platform,SEP,SEP,"eric-storage-encryption-provider",base-platform-e2e-cicd
+EIC,Assurance Insights and Reporting,AIR,PM Stats Calculation Handling,PMH,"","",pmh-e2e-cicd
+EIC,ML,ML,ML,ML,"","",ml-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Common Base,Common Base,"","",base-platform-common-base-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,CNCS OSS Config,CNCS OSS Config,"","",base-platform-cncs-config-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,CN Base OSS Config,CN Base OSS Config,"","",base-platform-cnbase-config-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Cloud Native Service Mesh,Cloud Native Service Mesh,"","",base-platform-service-mesh-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,Cloud Native Base,Cloud Native Base,"","",base-platform-cloud-native-base-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,SEF,SEF,"","",base-platform-sef-e2e-cicd
+EIC,OSS Platform and DevOps Tools,BASE PLATFORM,SEP,SEP,"","",base-platform-sep-e2e-cicd

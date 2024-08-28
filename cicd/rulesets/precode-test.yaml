@@ -1,0 +1,28 @@
+modelVersion: 2.0
+
+description: "Thunderbee: Rules for running pre code review on the OSS release IO solution Pipeline repo"
+
+docker-images:
+  - python3: armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/oris_python_precode:latest
+
+env:
+  - PWD
+  - WORKSPACE
+  - CHANGED_PYTHON_FILES
+
+rules:
+  run-python-unit-tests:
+    - task: python-unit-tests
+      docker-image: python3
+      cmd: coverage run  --source oris -m pytest -v
+    - task: python-coverage-report
+      docker-image: python3
+      cmd: coverage report
+
+  run-python-linting:
+    - task: run-pylint
+      docker-image: python3
+      cmd: pylint --persistent=no ${env.CHANGED_PYTHON_FILES}
+    - task: run-flake8
+      docker-image: python3
+      cmd: flake8 --exclude bob .

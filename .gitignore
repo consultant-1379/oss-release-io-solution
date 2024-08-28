@@ -1,0 +1,8 @@
+/**/__pycache__/
+*.py[cod]
+/venv/
+/workdir/
+.idea
+.pyc
+.vscode
+oris/src/etc/deployment/ocp/RH_N61_OCP/Kube_Config

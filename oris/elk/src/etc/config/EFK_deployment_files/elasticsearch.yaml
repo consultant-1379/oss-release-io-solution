@@ -1,0 +1,42 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: elasticsearch
+spec:
+  version: 8.5.3
+  nodeSets:
+    - name: default
+      count: 5
+      config:
+        node.store.allow_mmap: false
+        xpack.security.authc:
+          anonymous:
+            username: anonymous_user
+            roles: dashboard_only
+            authz_exception: false
+      podTemplate:
+        spec:
+          containers:
+            - name: elasticsearch
+              env:
+                - name: ES_JAVA_OPTS
+                  value: "-Xms8g -Xmx8g"
+                - name: ELASTICSEARCH_LOG_LEVEL
+                  value: "debug"
+              resources:
+                limits:
+                  cpu: 2
+                  memory: 16Gi
+                requests:
+                  cpu: 2
+                  memory: 16Gi
+      volumeClaimTemplates:
+      - metadata:
+          name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
+        spec:
+          accessModes:
+          - ReadWriteOnce
+          resources:
+            requests:
+              storage: 100Gi
+          storageClassName: network-block

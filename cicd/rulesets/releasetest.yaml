@@ -1,0 +1,83 @@
+modelVersion: 2.0
+
+description: "Thunderbee: Rules for releasing the OSS release IO solution"
+
+docker-images:
+  - bump-version: armdocker.rnd.ericsson.se/dockerhub-ericsson-remote/treeder/bump:1.2.11
+
+properties:
+  - oris-docker-file-path: ./Dockerfile
+  - oris-version-file-path: ./VERSION
+  - oris-image-name: oss-release-io-solution
+  - python-precode-docker-file-path: ./python3_pre_code_review/Dockerfile
+  - python-precode-version-file-path: ./python3_pre_code_review/VERSION
+  - python-precode-image-name: oris_python_precode
+
+var:
+  - docker-image-id
+  - docker-file-path
+  - version-file-path
+  - image-name
+
+env:
+  - PWD
+  - WORKSPACE
+  - IMAGE_VERSION
+
+rules:
+  bump-service-version:
+    - task: bump-version-file
+      docker-image: bump-version
+      docker-flags:
+        - "--workdir /app"
+      docker-mounts:
+        - "${env.PWD}:/app"
+      cmd: --filename ${var.version-file-path} patch
+    - task: expose-version
+      cmd: cat "${var.version-file-path}" > ${env.WORKSPACE}/artifact.properties
+
+  set-oris-env-variables:
+    - task: set-path-to-oris-docker-file
+      cmd: echo ${oris-docker-file-path} > .bob/var.docker-file-path
+    - task: set-path-to-oris-version-file
+      cmd: echo ${oris-version-file-path} > .bob/var.version-file-path
+    - task: set-oris-image-name
+      cmd: echo ${oris-image-name} > .bob/var.image-name
+
+  set-python-precode-env-variables:
+    - task: set-path-to-python-precode-docker-file
+      cmd: echo ${python-precode-docker-file-path} > .bob/var.docker-file-path
+    - task: set-path-to-python-precode-version-file
+      cmd: echo ${python-precode-version-file-path} > .bob/var.version-file-path
+    - task: set-python-precode-image-name
+      cmd: echo ${python-precode-image-name} > .bob/var.image-name
+
+  build-docker-image:
+    - task: build-image
+      cmd: docker build -f ${var.docker-file-path} -t armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/${var.image-name}:${env.IMAGE_VERSION} --pull ${env.WORKSPACE}
+    - task: get-docker-image-id
+      cmd: docker images armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/${var.image-name} -q > .bob/var.docker-image-id
+    - task: tag-image
+      cmd: docker tag ${var.docker-image-id} armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/${var.image-name}:latest
+
+  publish-docker-image:
+    - task: push-docker-image
+      cmd: docker push armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/${var.image-name}:${env.IMAGE_VERSION}
+    - task: push-latest-docker-image
+      cmd: docker push armdocker.rnd.ericsson.se/proj-eric-oss-dev-test/${var.image-name}:latest
+
+  add-changes-to-version-file:
+    - task: git-add
+      cmd: git add ${var.version-file-path}
+
+  push-changes-to-version-files:
+    - task: git-commit
+      cmd: git commit -m "Version ${env.IMAGE_VERSION}"
+    - task: git-tag
+      cmd: git tag -a "${env.IMAGE_VERSION}" -m "version ${env.IMAGE_VERSION}"
+    - task: git-rebase
+      cmd: git rebase HEAD master
+    - task: git-push-master-branch
+      cmd: git push ssh://gerrit-gamma.gic.ericsson.se:29418/OSS/com.ericsson.oss.cicd/oss-release-io-solution HEAD:master
+    - task: git-push-tags
+      cmd: git push --tags ssh://gerrit-gamma.gic.ericsson.se:29418/OSS/com.ericsson.oss.cicd/oss-release-io-solution

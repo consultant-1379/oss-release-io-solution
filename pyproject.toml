@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "oris"
+version = "0.1.0"
+description = "Automating setup of Grafana in IDUN environments"
+authors = ["Thunderbee <PDLENMCOUN@pdl.internal.ericsson.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.0.1"
+PyYAML = "^5.4.1"
+paramiko = "^2.7.2"
+requests = "^2.26.0"
+pandas = "^1.4.3"
+python-dateutil = "^2.8.2"
+atlassian = "^0.0.0"
+pymongo = "^4.2.0"
+prettytable = "^3.9.0"
+termcolor = "^2.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+coverage = "*"
+pylint = "*"
+flake8 = "*"
+pytest-mock = "^3.6.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "[%(levelname)s][%(filename)s:%(funcName)s:%(lineno)s][%(asctime)s] %(message)s"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+norecursedirs = "bob"
+
+[tool.poetry.scripts]
+oris = "oris:src"

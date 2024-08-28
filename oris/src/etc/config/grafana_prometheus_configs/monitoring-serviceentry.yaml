@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: monitoring-se
+spec:
+  hosts:
+  - eric-pm-server-external.monitoring.svc.cluster.local
+  location: MESH_EXTERNAL
+  ports:
+  - name: http
+    number: 9090
+    protocol: HTTP
+  resolution: DNS

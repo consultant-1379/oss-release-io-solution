@@ -1,0 +1,22 @@
+pipeline {
+  agent {
+    node {
+      label SLAVE
+    }
+  }
+  options {
+    timestamps()
+  }
+  stages {
+    stage('Setup Grafana and Prometheus') {
+      steps {
+        sh "docker run --rm --name oris-${BUILD_TAG} armdocker.rnd.ericsson.se/proj_openstack_tooling/oss-release-io-solution:latest grafana-setup -e ${environment_name} -pt ${platform_type} -at ${area_type}"
+      }
+    }
+  }
+  post{
+    always{
+      sh "docker rmi armdocker.rnd.ericsson.se/proj_openstack_tooling/oss-release-io-solution:latest"
+    }
+  }
+}

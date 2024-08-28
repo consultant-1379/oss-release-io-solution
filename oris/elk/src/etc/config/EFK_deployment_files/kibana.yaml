@@ -1,0 +1,46 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: kibana
+spec:
+  version: 8.5.3
+  count: 1
+  config:
+    data.autocomplete.valueSuggestions.terminateAfter: 10000000
+    server.publicBaseUrl: https://data-analytics-kibana.ews.gic.ericsson.se
+    elasticsearch.hosts: [ "https://elasticsearch:9200" ]
+    xpack.security.authc.providers:
+      basic.basic1:
+        order: 0
+      anonymous.anonymous1:
+        order: 1
+        credentials:
+          username: "anonymous"
+          password: "anonymous_password"
+    logging:
+      appenders:
+        console_appender:
+          type: console
+          layout:
+            type: json
+      loggers:
+        - name: http.server.response
+          level: debug
+          appenders: [console_appender]
+  elasticsearchRef:
+    name: elasticsearch
+  podTemplate:
+    spec:
+      containers:
+        - name: kibana
+          resources:
+            requests:
+              memory: "16Gi"
+              cpu: "2"
+            limits:
+              memory: "16Gi"
+              cpu: "2"
+          env:
+            - name: KIBANA_LOGGING_VERBOSE
+              value: "true"
+
